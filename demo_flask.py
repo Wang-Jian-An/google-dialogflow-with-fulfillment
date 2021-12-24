@@ -1,3 +1,4 @@
+import time
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -5,10 +6,10 @@ app = Flask(__name__)
 @app.route("/webhook", methods=["GET", "POST"])
 def webhook():
     req = request.get_json(silent=True, force=True)
-    fulfillment = ""
+    fulfillmentText = ""
     query_result = req.get("queryResult")
-    if query_result.get("action") == "tomorrow_order_or_not":
-        fulfillmentText = "You can order."
+    if query_result.get("action") == "ask_time":
+        fulfillmentText = str(time.time())
     return {
         "fulfillmentText":fulfillmentText,
         "source":"webhookdata"
