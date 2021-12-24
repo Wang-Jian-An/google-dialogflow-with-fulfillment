@@ -8,10 +8,10 @@ def webhook():
     fulfillment = ""
     query_result = req.get("queryResult")
     if query_result.get("action") == "tomorrow_order_or_not":
-        fulfillment = "You can order."
+        fulfillmentText = "You can order."
     return {
-        "fulfillment":fulfillment,
-        "source":"webhookdate"
+        "fulfillmentText":fulfillmentText,
+        "source":"webhookdata"
     }
 
 if __name__ == "__main__":
