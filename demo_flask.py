@@ -1,4 +1,4 @@
-import time
+from datetime import datetime
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -9,7 +9,7 @@ def webhook():
     fulfillmentText = ""
     query_result = req.get("queryResult")
     if query_result.get("action") == "ask_time":
-        fulfillmentText = str(time.time())
+        fulfillmentText = str(datetime.now())
     return {
         "fulfillmentText":fulfillmentText,
         "source":"webhookdata"
