@@ -11,7 +11,8 @@ def webhook():
     fulfillmentText = ""
     query_result = req.get("queryResult")
     if query_result.get("action") == "imbalance_data_concept_question":
-        fulfillmentText = imbalanced_data_concept_question.generate_answer_text()
+        # fulfillmentText = imbalanced_data_concept_question.generate_answer_text()
+        fulfillmentText = "不平衡資料相關問題"
     elif query_result.get("action") == "precision_equation":
         fulfillmentText = "Precision相關問題"
     return {
