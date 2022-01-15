@@ -10,6 +10,8 @@ def webhook():
     query_result = req.get("queryResult")
     if query_result.get("action") == "imbalance_data_concept_question":
         fulfillmentText = "不平衡資料的問題"
+    elif query_result.get("action") == "precision_equation":
+        fulfillmentText = "Precision相關問題"
     return {
         "fulfillmentText":fulfillmentText,
         "source":"webhookdata"
