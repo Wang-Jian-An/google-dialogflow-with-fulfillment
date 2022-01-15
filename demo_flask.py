@@ -1,6 +1,8 @@
 from datetime import datetime
 from flask import Flask, request
 
+import imbalanced_data_concept_question
+
 app = Flask(__name__)
 
 @app.route("/webhook", methods=["GET", "POST"])
@@ -9,7 +11,7 @@ def webhook():
     fulfillmentText = ""
     query_result = req.get("queryResult")
     if query_result.get("action") == "imbalance_data_concept_question":
-        fulfillmentText = "不平衡資料的問題"
+        fulfillmentText = imbalanced_data_concept_question.generate_answer_text()
     elif query_result.get("action") == "precision_equation":
         fulfillmentText = "Precision相關問題"
     return {
