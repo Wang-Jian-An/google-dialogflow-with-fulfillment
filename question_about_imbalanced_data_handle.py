@@ -1,7 +1,7 @@
 import pandas as pd
 
 def generate_answer_text():
-    qa_data = pd.read_csv("Cupoy_QA問答集_不平衡資料.csv")
+    qa_data = pd.read_csv("Cupoy_QA問答集_如何處理不平衡資料.csv")
 
     answer_text = "使用者你好，\n在網路上有專家為您解答您的問題囉，\n在此附上連結，並建議您參考以下資訊：\n\n"
     for one_row in range(qa_data.shape[0]):
