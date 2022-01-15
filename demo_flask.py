@@ -8,8 +8,8 @@ def webhook():
     req = request.get_json(silent=True, force=True)
     fulfillmentText = ""
     query_result = req.get("queryResult")
-    if query_result.get("action") == "ask_time":
-        fulfillmentText = str(datetime.now())
+    if query_result.get("action") == "imbalance_data_concept_question":
+        fulfillmentText = "不平衡資料的問題"
     return {
         "fulfillmentText":fulfillmentText,
         "source":"webhookdata"
