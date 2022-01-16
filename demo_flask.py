@@ -21,7 +21,7 @@ def webhook():
     elif query_result.get("action") == "precision_equation":
         fulfillmentText = "Precision相關問題"
         with open("query_text_store_precision.txt", "r") as f:
-            fulfillmentText += " ".join(f.readlines())
+            file = f.readlines()
     elif query_result.get("action") == "question_about_the_concept_of_transfer_learning":
         fulfillmentText = question_about_the_concept_of_transfer_learning.generate_answer_text()
     return {
