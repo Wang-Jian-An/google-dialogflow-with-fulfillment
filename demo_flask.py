@@ -3,6 +3,7 @@ from flask import Flask, request
 import question_about_imbalanced_data_handle
 import question_about_imbalanced_data_concept
 import question_about_the_concept_of_transfer_learning
+import question_about_explainable_ai
 import query_text_store
 
 app = Flask(__name__)
@@ -14,16 +15,24 @@ def webhook():
     query_result = req.get("queryResult")
     text = query_result.get("queryText")
     query_text_store.store_text(text)
+    
     if query_result.get("action") == "question_about_imbalanced_data_handle":
         fulfillmentText = question_about_imbalanced_data_handle.generate_answer_text()
+    
     elif query_result.get("action") == "question_about_imbalanced_data_concept":
         fulfillmentText = question_about_imbalanced_data_concept.generate_answer_text()
+    
     elif query_result.get("action") == "precision_equation":
         fulfillmentText = "Precision相關問題"
         with open("query_text_store_precision_equation.txt", "r") as f:
             fulfillmentText += " ".join(f.readlines())
+    
     elif query_result.get("action") == "question_about_the_concept_of_transfer_learning":
         fulfillmentText = question_about_the_concept_of_transfer_learning.generate_answer_text()
+    
+    elif query_result.get("action") == "question_about_explainable_ai":
+        fulfillmentText = question_about_explainable_ai.generate_answer_text()
+    
     return {
         "fulfillmentText":fulfillmentText,
         "source":"webhookdata"
