@@ -1,0 +1,3 @@
+﻿QA主題,QA描述,QA回答,QA連結
+什麼是強化學習中的Ｑ learning演算法?,增強學習 (Reinforcement learning) 是一種機器學習方法，而 Q-learning 是增強學習中一個最知名的演算法，我想跟大家討論一下Q-learning 的概述。,,https://www.cupoy.com/qa/club/ai_tw/0000016D6BA22D97000000016375706F795F72656C656173654B5741535354434C5542/0000017C0D6897CD000000296375706F795F72656C656173655155455354
+Q-learning 中的Epsilon greedy strategy 是什麼?,在強化學習Q-learning演算法中有兩個很重要的概念，且模型需要在這兩個觀念間做取捨，才能更有效地幫助模型訓練，這兩個概念分別是Exploiting & Exploration，接下來我想跟大家討論這兩個概念。,,https://www.cupoy.com/qa/club/ai_tw/0000016D6BA22D97000000016375706F795F72656C656173654B5741535354434C5542/0000017C0D77576F0000002A6375706F795F72656C656173655155455354

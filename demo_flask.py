@@ -4,6 +4,8 @@ import question_about_imbalanced_data_handle
 import question_about_imbalanced_data_concept
 import question_about_the_concept_of_transfer_learning
 import question_about_explainable_ai
+import question_about_the_concept_of_reinforcement_learning
+import question_about_the_application_of_reinforcement_learning
 import query_text_store
 
 app = Flask(__name__)
@@ -32,7 +34,12 @@ def webhook():
     
     elif query_result.get("action") == "question_about_explainable_ai":
         fulfillmentText = question_about_explainable_ai.generate_answer_text()
+
+    elif query_result.get("action") == "question_about_the_concept_of_reinforcement_learning":
+        fulfillmentText = question_about_the_concept_of_reinforcement_learning.generate_answer_text()
     
+    elif query_result.get("action") == "question_about_the_application_of_reinforcement_learning":
+        fulfillmentText = question_about_the_application_of_reinforcement_learning.generate_answer_text()
     return {
         "fulfillmentText":fulfillmentText,
         "source":"webhookdata"
