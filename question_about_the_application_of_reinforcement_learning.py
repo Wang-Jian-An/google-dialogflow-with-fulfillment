@@ -1,3 +1,4 @@
+import pandas as pd
 def generate_answer_text():
     qa_data = pd.read_csv("Cupoy_QA問答集_強化學習於生活中的應用.csv")
 
